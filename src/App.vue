@@ -14,6 +14,10 @@ import FSearch from "@/components/Form/FSearch/FSearch.vue";
 </template>
 
 <style scoped lang="scss">
+.index-page {
+  padding: 20px;
+}
+
 .index-page__wrapper {
   display: flex;
   justify-content: center;
