@@ -10,7 +10,7 @@ const currentGeo = ref<string>('')
 <div class="index-page">
   <div class="index-page__wrapper">
     <ui-card>
-     <nominatim-search v-model:search-value="currentGeo" />
+     <nominatim-search v-model="currentGeo" />
     </ui-card>
   </div>
 </div>

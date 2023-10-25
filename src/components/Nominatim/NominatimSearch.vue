@@ -1,33 +1,37 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import {computed, ref} from "vue";
 import type { TTimeout } from "@/types/general";
 import NominatimResults from "@/components/Nominatim/NominatimResults/NominatimResults.vue";
 import { useNominatimStore } from "@/stores/nominatim";
 import type { ISearchSuggestion } from "@/types/nominatim";
 
 const props = defineProps<{
-  searchValue: string
+  modelValue: string
 }>()
 
 const emit = defineEmits<{
-  (e: 'update:searchValue', value: string): void
+  (e: 'update:modelValue', value: string): void
 }>()
 
 const results = ref<ISearchSuggestion[]>([])
 const timeout = ref<TTimeout>()
 
-const changeValue = (event: Event) => {
-  const value = event.target?.value || '';
+const searchValue = computed<string>({
+  get() {
+    return props.modelValue
+  },
 
-  emit('update:searchValue', value);
-}
+  set(value = '') {
+    emit('update:modelValue', value)
+  }
+})
 
 const nominatimSuggestions = () => {
   clearTimeout(timeout.value);
 
   timeout.value = setTimeout(async ()=> {
     try {
-      const data = await useNominatimStore().fetchSearch(props.searchValue)
+      const data = await useNominatimStore().fetchSearch(searchValue.value)
 
       results.value = data || [];
     } catch (error) {
@@ -43,9 +47,7 @@ const nominatimSuggestions = () => {
 <label class="nominatim-search">
   <span>Поле поиска </span>
 
-  <input :value="searchValue"
-         placeholder="поиск"
-         @input="changeValue"
+  <input v-model="searchValue"
          @keyup="nominatimSuggestions"
   >
 
