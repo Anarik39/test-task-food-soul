@@ -1,4 +1,8 @@
-## Project Setup
+# Компонент поиска Nominatim
+
+<hr>
+
+Реализован компонент поиска с API Nominatim
 
 ```sh
 npm install
