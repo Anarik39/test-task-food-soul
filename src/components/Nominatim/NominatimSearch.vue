@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, ref} from "vue";
+import { computed, ref } from "vue";
 import type { TTimeout } from "@/types/general";
 import NominatimResults from "@/components/Nominatim/NominatimResults/NominatimResults.vue";
 import { useNominatimStore } from "@/stores/nominatim";
