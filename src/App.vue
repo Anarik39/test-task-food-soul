@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import UiCard from "@/components/Ui/UiCard.vue";
-import FSearch from "@/components/Form/FSearch/FSearch.vue";
+import NominatimSearch from "@/components/Nominatim/NominatimSearch.vue";
+import {ref} from "vue";
+
+const currentGeo = ref<string>('')
 </script>
 
 <template>
 <div class="index-page">
   <div class="index-page__wrapper">
     <ui-card>
-      <f-search/>
+     <nominatim-search v-model:search-value="currentGeo" />
     </ui-card>
   </div>
 </div>

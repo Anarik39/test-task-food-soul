@@ -1,4 +1,4 @@
-type TSuggestion = {
+export interface ISearchSuggestion {
     addresstype: string;
     boundingbox: string[];
     category: string;
@@ -13,6 +13,7 @@ type TSuggestion = {
     place_id: number;
     place_rank: number;
     type: number;
-};
+}
 
-export type { TSuggestion }
+export type TFormatResponse = 'xml' | 'json' | 'jsonv2' | 'geojson' | 'geocodejson';
+

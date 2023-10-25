@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { TSuggestion } from "@/types/search";
-import FSearchResultsItem from "@/components/Form/FSearch/FSearchResults/FSearchResultsItem.vue";
+import type { TSuggestion } from "@/types/nominatim";
+import NominatimResultsItem from "@/components/Nominatim/NominatimResults/NominatimResultsItem.vue";
 
 interface IProps {
   results?: TSuggestion[]
@@ -19,7 +19,7 @@ withDefaults(defineProps<IProps>(), {
       <li v-for="item in results"
           :key="item.osm_id"
       >
-        <f-search-results-item :item="item"/>
+        <nominatim-results-item :item="item"/>
       </li>
     </ul>
   </div>

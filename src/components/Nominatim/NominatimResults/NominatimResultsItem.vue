@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TSuggestion } from "@/types/search";
+import type { TSuggestion } from "@/types/nominatim";
 
 interface IProps {
   item?: TSuggestion | null
