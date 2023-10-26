@@ -1,8 +1,8 @@
 # SSR Vite + Vue 3 + TS
 
-<hr>
-
 Реализован компонент поиска с API Nominatim
+
+### Установить зависимости
 
 ```sh
 npm install
