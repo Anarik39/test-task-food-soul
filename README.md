@@ -1,4 +1,4 @@
-# Компонент поиска Nominatim
+# SSR Vite + Vue 3 + TS
 
 <hr>
 
