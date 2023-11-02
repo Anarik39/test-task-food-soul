@@ -1,6 +1,8 @@
-# SSR Vite + Vue 3 + TS
+# Test task Food Soul
 
-Implemented a search component with the Nominatim API
+## Implemented a search component with the Nominatim API
+
+Stack: Vue 3, SSR Vite, Pinia, TS
 
 ### Install
 
