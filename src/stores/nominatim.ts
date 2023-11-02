@@ -7,12 +7,12 @@ export const useNominatimStore = defineStore('nominatim', () => {
     const formatData: TFormatResponse = 'jsonv2';
 
     const fetchSearch = async (query: string) => {
-        const params = {
-            q: query,
-            format: formatData
-        };
-
         try {
+            const params = {
+                q: query,
+                format: formatData
+            };
+            
             const { data } = await axios.get<ISearchSuggestion[]>(`${url}/search`, { params });
 
             return data
